@@ -1,9 +1,10 @@
 // Component for displaying products
 app.component('product-display', {
     // 用props传递变量，从main.js到ProductDisplay这个Component
-    props:{
-        premium:{type: Boolean, required: true}
-    },
+    // props:{
+    //     premium:{type: Boolean, required: true}
+    // },
+    props:['premium','cart'],
     template:
     /*html*/
     `
@@ -55,7 +56,7 @@ app.component('product-display', {
     },
     methods: {
         addToCart(){
-            this.cart += 1;
+            this.$emit('add-to-cart', this.variants[this.selectedVariant].id);
         },
         // 实时存储用户选中variant的index到变量selectedVariant中
         updateVariant(index){
