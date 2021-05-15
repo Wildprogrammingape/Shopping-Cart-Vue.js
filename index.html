@@ -13,28 +13,23 @@
 
   <body>
     <div id="app">
-      <!-- <h1>{{product}}</h1>
-      <p>{{discription}}</p> -->
-      <!-- <a :href="url">1111</a> -->
+
 
       <div class="nav-bar"></div>
+      <div class="cart">Cart({{cart}})</div>
 
-      <div class="product-display">
-        <div class="product-container">
-          <div class="product-image">
-            <img v-bind:src="image" alt="">
-          </div>
-          <div class="product-info">
-            <h1>{{product}}</h1>
-            <p v-show="inStock">In stock</p>
-            
-          </div>
-        </div>
-      </div>
-    </div>
+      <!-- Use Component 'product-display' -->
+      <!-- premium作为attribute，"premium"为从main.js获得的变量,v-bind用来实时绑定"-->
+      <product-display :premium="premium"></product-display>
+      <product-display></product-display>
+      <product-display></product-display>
+ 
 
     <!-- Import App -->
     <script src="main.js"></script>
+
+    <!-- Import Components -->
+    <script src="components/ProductDisplay.js"></script>
 
     <!-- Mount App -->
     <script>

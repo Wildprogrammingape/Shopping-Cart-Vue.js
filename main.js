@@ -2,13 +2,17 @@ const app = Vue.createApp({
     // data: function(){} // shorthand,
     data(){
         return {
-            product: 'Socks',
-            discription: 'This is our product in store',
-            image: 'assets/images/socks_blue.jpg',
-            url: 'http://127.0.0.1:5500/index.html',
-            inStock: true,
+            // cart变量在main.js全局中定义，而ProductDisplay Component需要用，
+            // 因此需要props将parent的变量传递到child中
+            cart: 0,
+            premium: false,
+
         }
-    }
+    },
+    methods: {
+        
+    },
+    
 })
 
 
