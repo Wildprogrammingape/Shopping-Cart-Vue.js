@@ -21,8 +21,6 @@
       <!-- Use Component 'product-display' -->
       <!-- premium作为attribute，"premium"为从main.js获得的变量,v-bind用来实时绑定"-->
       <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
-      <product-display></product-display>
-      <product-display></product-display>
  
 
     <!-- Import App -->
@@ -30,6 +28,9 @@
 
     <!-- Import Components -->
     <script src="components/ProductDisplay.js"></script>
+    <script src="components/ReviewForm.js"></script>
+    <script src="components/ReviewList.js"></script>
+
 
     <!-- Mount App -->
     <script>

@@ -38,6 +38,9 @@ app.component('product-display', {
           </div>
         </div>
       </div>
+      <review-list v-if="reviews.length" v-bind:reviews="reviews"></review-list>
+      <review-form @review-submitted="addReview"></review-form>
+      
     </div>
     `,
     // data: function(){} // shorthand,
@@ -51,6 +54,7 @@ app.component('product-display', {
             ],
             brand: 'LongChen Store',
             selectedVariant: 0,
+            reviews: [],
 
         }
     },
@@ -61,6 +65,9 @@ app.component('product-display', {
         // 实时存储用户选中variant的index到变量selectedVariant中
         updateVariant(index){
             this.selectedVariant = index;
+        },
+        addReview(review){// 参数来自于$emit的第二个参数
+            this.reviews.push(review)
         }
     },
     computed: {
@@ -85,7 +92,9 @@ app.component('product-display', {
             else{
                 return '$7.99'
             }
-        }
+        },
+
+        
     }
     
 
